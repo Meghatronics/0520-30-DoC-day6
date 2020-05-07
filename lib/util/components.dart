@@ -82,26 +82,76 @@ class ThemedButton extends StatelessWidget {
   }
 }
 
-
 class PageHeadingSet1 extends StatelessWidget {
   const PageHeadingSet1({
-    Key key,
+    Key key, 
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-      colors: [kThemePallete1, kThemePallete2],
-      begin: Alignment.centerLeft,
-      end: Alignment.centerRight,
-    )), 
-    child: Row(
-      children: <Widget>[
-        Text('Meet', style: kPage1HeadingStyle,),
-        Text('Love', style: kPage1HeadingStyle.copyWith(fontSize: 48))
-      ],
-    ),);
+      alignment: Alignment.bottomLeft,
+      padding: EdgeInsets.symmetric(
+        horizontal: 30,
+        vertical: 30,
+      ),
+      constraints: BoxConstraints.tightForFinite(
+        width: kScreenSize.width,
+        height: kScreenSize.height * 0.4,
+      ),
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+        colors: [kThemePallete1, kThemePallete2],
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
+      )),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: <Widget>[
+          Text(
+            'Meet',
+            style: kPage2HeadingStyle.copyWith(fontSize: 48),
+          ),
+          Text('Love', style: kPage2HeadingStyle.copyWith(fontSize: 68))
+        ],
+      ),
+    );
+  }
+}
+
+class Set1ScreenLayout extends StatelessWidget {
+  const Set1ScreenLayout({@required this.child});
+  final Widget child;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      constraints: BoxConstraints.expand(),
+      color: kThemeWhite,
+      child: Stack(
+        alignment: Alignment.topCenter,
+        children: <Widget>[
+          Positioned(
+            bottom: 0,
+            top: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    PageHeadingSet1(),
+                    Expanded(
+                      child: Padding(
+                          padding:
+                              EdgeInsets.only(left: 30, right: 15, top: 80),
+                          child: child),
+                    )
+                  ]),
+            ),
+          )
+        ],
+      ),
+    );
   }
 }

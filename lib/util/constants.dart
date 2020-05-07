@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Size kScreenSize;
-enum IconSize{large, small}
+enum IconSize { large, small }
 
 const Color kThemePallete1 = Color(0xFF1C5E80);
 const Color kThemePallete2 = Color(0xFF85D6FF);
@@ -10,7 +10,6 @@ const Color kThemePallete3 = Color(0xFF38BDFF);
 const Color kThemePallete4 = Color(0xFF426B80);
 const Color kThemePallete5 = Color(0xFF2D97CC);
 const Color kThemeWhite = Color(0xFFEEEEEE);
-
 
 const ImageProvider kMale1Image = AssetImage('assets/male1.png');
 const ImageProvider kFemale1Image = AssetImage('assets/female1.png');
@@ -23,4 +22,14 @@ const TextStyle kButtonTextStyle = TextStyle(
   fontSize: 20,
 );
 
-final kPage1HeadingStyle =  GoogleFonts.fredokaOne(fontSize: 38, color: kThemePallete4);
+final kPage1HeadingStyle = GoogleFonts.fredokaOne(
+  fontSize: 38,
+  color: kThemePallete4,
+);
+
+final kPage2HeadingStyle = GoogleFonts.fredokaOne(
+  fontSize: 38,
+  color: kThemeWhite,
+);
+const String kSignUpAgreementNotice =
+    'BY SIGNING UP, YOU AGREE TO OUR TERMS AND CONDITIONS AND DISCLOSURE AGREEMENTS';
